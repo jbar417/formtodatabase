@@ -1,0 +1,15 @@
+HOW-TO SETUP FROM FORMANDDATA2. 
+
+in settings, add app_name to "INSTALLED_APPS"
+in project urls.py, from django.urls import include
+add:
+    path('', include("app1.urls")),
+
+create templates folder, and app_name subfolder. 
+create forms1.html and copy from <body> to </body>
+create submitted.html, add html:5, and add a brief submitted message. 
+
+in app folder:
+copy forms.py, models.py, urls.py, views.py
+
+AND YOU'RE DONE!
