@@ -1,0 +1,68 @@
+Yes, I am a newbie programmer, my only experience with code is a 4th grade python book, which introduced me to python,
+and a Django course that I bought on UDEMY.com. 
+I've been attempting to create a "forum" for my dad's project, and he's been paying me to do it,
+the same as he would pay someone else, except that it killed three birds with one stone to pay me to do it. 
+1) I was depressed during covid and sitting on my ass a lot, and this gave me something to do. 
+2) It ushers me into being independent of him, as he would have had to help me out anyway had he not wanted me to die. 
+3) My dad needed this project complete for the sake of his retirement income, which he had been investing madly for the sake of hope. 
+
+FORMANDDATA2 is my project, which doesn't work. 
+django-practical-guide-course-code-forms-14-class-based-views is the instructors project, which works. 
+
+The problem is that I need the form to write to the database. If you use the shell to open the database, you will see that 
+there is one data entry in the database, that I had added through the shell. If you were to use the form to try to add data
+to the database (at least on my computer) you would not be able to add more data to the database.
+
+You must access the database through the shell in order to see if the data has or has not been added. 
+python manage.py shell
+from app1.models import CommentData
+CommentData.objects.all()
+If there is only one entry in the database, then the form has not added the new data from the form to the database. 
+The instructor's project works, and currently the only difference between the instructor's project and mine, is that in the
+forms1.html document, I have 
+    <form action="/submitted" method="POST">
+whereas the instructor has
+    <form action="/" method="POST">
+I suppose the logic behind this is that he has the formpage on the "" of his webpage and I have it on a "/formpage." 
+I suppose if I were to put my form page on "" that if I were to use "/" the HttpResponseRedirect command in views would work. 
+
+...
+
+PROBLEM SOLVED
+The form writing to the database, WAS linked to the "/" in the forms1.html
+????
+How this works, I have no idea. Why would this matter? 
+And How would I make this work if the formpage was not the top page? 
+
+......
+OLD
+......
+The only solution left, is that the forms.py file needs to be updated. 
+It is possible that that was the only problem. 
+
+Otherwise, the very last attempt is to create the superuser. 
+This would mean that the superuser was necessary on a new database, without the original null commands,
+in order to make the form print to the database. 
+
+None of that worked. 
+The projects are pretty much identical, and the professors works, and mine doesn't. 
+
+Even updated the html5 document, and it still didn't work. 
+The only thing I haven't done was add CSS, which shouldn't matter. 
+
+
+Its also clear that there is something different about the system that my instructor wrote his code on and mine. 
+Somehow his code from his machine, is written differently than mine in a few ways that works, when, when I write it on my machine, it doens't work.
+For instance, in forms1.html, when I write "/" it does not redirect to the submitted page using the HttpResponseRedirect from views. 
+I have to write "/submitted" in my html code, in order for the redirect to work. 
+However, in my instructor's code, writen on his machine, he wrote "/" and it redirected just fine through the views. 
+Although, my and his views are pretty much the same. 
+This could be related to how I cannot write to the database, using code written from my machine, and yet, I can download the code written from hims machine, 
+and it works, even though I cannot write the code from scratch with modest changes on my machine, and have it work. 
+
+There is some sort of machine differences, that have to be accounted for. 
+
+It makes sense, because some computers won't let you get past "django-admin startproject", like my dad's computer, and some cases I've seen online. 
+
+The last attempt I can think of is to adjust the url of the "formpage" to be "" before attemtping to use "/" on the html "action="/"" message. 
+The logic behind this working, would not really make sense however. 
