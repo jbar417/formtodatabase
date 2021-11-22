@@ -13,3 +13,5 @@ in app folder:
 copy forms.py, models.py, urls.py, views.py
 
 AND YOU'RE DONE!
+
+To put the form on a page that is not the homepage, you can adjust the urls and create html docutments and views as appropriate, and then simply erase "action" paramater in <form> block in the forms1.html file. If this action paramater is stated, you cannot have a form unless it is on the root directory of the website. 
